@@ -229,6 +229,16 @@ Config.BlacksmithCrafting = {
         crafttime = 30000,
         ingredients = { 
             [1] = { item = 'coal', amount = 10 },
+            [2] = { item = 'ironbar', amount = 1 },
+        },
+        receive = 'steelbar',
+        giveamount = 1
+    },
+    {
+        category = 'Bars',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 10 },
             [2] = { item = 'copperore', amount = 10 },
         },
         receive = 'copperbar',
