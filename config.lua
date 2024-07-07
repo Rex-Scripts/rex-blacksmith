@@ -309,5 +309,16 @@ Config.BlacksmithCrafting = {
         receive = 'shotgunparts',
         giveamount = 1
     },
+    {
+        category = 'Ammo Parts',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 2 },
+            [2] = { item = 'copperbar', amount = 1 },
+            [3] = { item = 'leadbar', amount = 1 },
+        },
+        receive = 'ammoparts',
+        giveamount = 100
+    },
 
 }
