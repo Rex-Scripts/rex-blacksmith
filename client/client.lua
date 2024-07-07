@@ -482,6 +482,13 @@ RegisterNetEvent('rex-blacksmith:client:rentblacksmith', function(blacksmithid, 
     if input[1] == 'no' then
         return
     end
+	
+    RSGCore.Functions.TriggerCallback('rsg-multijob:server:checkjobs', function(canbuy)
+        if not canbuy then
+            lib.notify({ title = Lang:t('client.lang_50'), type = 'error', duration = 7000 })
+            return
+        end
+    end)
 
     RSGCore.Functions.TriggerCallback('rex-blacksmith:server:countowned', function(result)
     
