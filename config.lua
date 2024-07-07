@@ -254,5 +254,60 @@ Config.BlacksmithCrafting = {
         receive = 'copperbar',
         giveamount = 1
     },
+    {
+        category = 'Weapon Parts',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 1 },
+            [2] = { item = 'steelbar', amount = 1 },
+            [3] = { item = 'wood', amount = 1 },
+        },
+        receive = 'revolverparts',
+        giveamount = 1
+    },
+    {
+        category = 'Weapon Parts',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 1 },
+            [2] = { item = 'steelbar', amount = 1 },
+            [3] = { item = 'wood', amount = 1 },
+        },
+        receive = 'pistolparts',
+        giveamount = 1
+    },
+    {
+        category = 'Weapon Parts',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 2 },
+            [2] = { item = 'steelbar', amount = 2 },
+            [3] = { item = 'wood', amount = 2 },
+        },
+        receive = 'repeaterparts',
+        giveamount = 1
+    },
+    {
+        category = 'Weapon Parts',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 2 },
+            [2] = { item = 'steelbar', amount = 2 },
+            [3] = { item = 'wood', amount = 2 },
+        },
+        receive = 'rifleparts',
+        giveamount = 1
+    },
+    {
+        category = 'Weapon Parts',
+        crafttime = 30000,
+        ingredients = { 
+            [1] = { item = 'coal', amount = 2 },
+            [2] = { item = 'steelbar', amount = 2 },
+            [3] = { item = 'wood', amount = 2 },
+        },
+        receive = 'shotgunparts',
+        giveamount = 1
+    },
 
 }
