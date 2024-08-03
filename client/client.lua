@@ -487,31 +487,30 @@ RegisterNetEvent('rex-blacksmith:client:rentblacksmith', function(blacksmithid, 
         if not canbuy then
             lib.notify({ title = Lang:t('client.lang_50'), type = 'error', duration = 7000 })
             return
+	else
+	    RSGCore.Functions.TriggerCallback('rex-blacksmith:server:countowned', function(result)
+	    
+	        if result >= Config.MaxBalacksmiths then
+	            lib.notify({ title = Lang:t('client.lang_48'), description = Lang:t('client.lang_49'), type = 'error', duration = 7000 })
+	            return
+	        end
+	
+	        -- check player has a licence
+	        if Config.LicenseRequired then
+	            local hasItem = RSGCore.Functions.HasItem('blacksmithlicence', 1)
+	
+	            if hasItem then
+	                TriggerServerEvent('rex-blacksmith:server:rentblacksmith', blacksmithid)
+	            else
+	                lib.notify({ title = Lang:t('client.lang_37'), type = 'error', duration = 7000 })
+	            end
+	        else
+	            TriggerServerEvent('rex-blacksmith:server:rentblacksmith', blacksmithid)
+	        end
+	        
+	    end)
         end
     end)
-
-    RSGCore.Functions.TriggerCallback('rex-blacksmith:server:countowned', function(result)
-    
-        if result >= Config.MaxBalacksmiths then
-            lib.notify({ title = Lang:t('client.lang_48'), description = Lang:t('client.lang_49'), type = 'error', duration = 7000 })
-            return
-        end
-
-        -- check player has a licence
-        if Config.LicenseRequired then
-            local hasItem = RSGCore.Functions.HasItem('blacksmithlicence', 1)
-
-            if hasItem then
-                TriggerServerEvent('rex-blacksmith:server:rentblacksmith', blacksmithid)
-            else
-                lib.notify({ title = Lang:t('client.lang_37'), type = 'error', duration = 7000 })
-            end
-        else
-            TriggerServerEvent('rex-blacksmith:server:rentblacksmith', blacksmithid)
-        end
-        
-    end)
-
 end)
 
 -------------------------------------------------------------------------------------------
